@@ -23,11 +23,11 @@ export const GLOBE_CONFIG: COBEOptions = {
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [0.9, 0.9, 0.9],
   markers: [
-    { location: [12.9716, 77.5946], size: 0.08 }, // Bangalore, India
-    { location: [23.0225, 72.5714], size: 0.06 }, // Gujarat, India
-    { location: [37.7749, -122.4194], size: 0.05 }, // San Francisco, CA
-    { location: [51.5074, -0.1278], size: 0.05 }, // London, UK
-    { location: [35.6762, 139.6503], size: 0.05 }, // Tokyo, Japan
+    { location: [12.9719, 77.5937], size: 0.1 }, // Bengaluru, India (Prominent)
+    { location: [23.0225, 72.5714], size: 0.05 }, // Gujarat, India
+    { location: [37.7749, -122.4194], size: 0.04 }, // San Francisco, CA
+    { location: [51.5074, -0.1278], size: 0.04 }, // London, UK
+    { location: [35.6762, 139.6503], size: 0.04 }, // Tokyo, Japan
   ],
 };
 
