@@ -6,6 +6,8 @@ import { HackathonsSection } from "@/components/hackathons/HackathonsSection";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { GallerySection } from "@/components/gallery/GallerySection";
 import { SocialLinksSection } from "@/components/social/SocialLinksSection";
+import { BusinessesSection } from "@/components/businesses/BusinessesSection";
+import { GitHubActivitySection } from "@/components/github/GitHubActivitySection";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <ProjectsSection />
       <GallerySection />
       <SocialLinksSection />
+      <BusinessesSection />
+      <GitHubActivitySection />
     </main>
   );
 }
