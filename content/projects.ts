@@ -10,6 +10,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "agency-os",
+    name: "Agency OS",
+    description:
+      "Internal operations and client workflow management platform.",
+    technologies: ["Next.js", "TypeScript"],
+    status: "In Development",
+  },
+  {
     id: "nexorder",
     name: "NexOrder",
     description:
@@ -17,14 +25,6 @@ export const projects: Project[] = [
     url: "https://sahaya.tech",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "Active",
-  },
-  {
-    id: "agency-os",
-    name: "Agency OS",
-    description:
-      "Internal operations and client workflow management platform.",
-    technologies: ["Next.js", "TypeScript"],
-    status: "In Development",
   },
   {
     id: "self-checkout-pos",
