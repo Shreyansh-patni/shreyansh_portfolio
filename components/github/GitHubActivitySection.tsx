@@ -1,5 +1,6 @@
 import React from "react";
 import { getGitHubActivityData } from "@/lib/github";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 
 function getLevelColor(level: 0 | 1 | 2 | 3 | 4): string {
   switch (level) {
@@ -52,7 +53,7 @@ export async function GitHubActivitySection() {
         </a>
       </div>
 
-      <div className="p-4 rounded-xl bg-surface/40 border border-border/60">
+      <div className="relative p-4 rounded-xl bg-surface/40 border border-border/60 overflow-hidden">
         <div className="text-[13px] text-muted-foreground mb-3 font-medium">
           {data.totalContributions > 0
             ? `${data.totalContributions} contributions in the last year`
@@ -92,6 +93,8 @@ export async function GitHubActivitySection() {
             <span>More</span>
           </div>
         </div>
+
+        <ProgressiveBlur height="16px" position="bottom" blurLevels={[0.5, 1, 2, 4]} />
       </div>
     </section>
   );

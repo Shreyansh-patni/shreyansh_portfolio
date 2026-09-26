@@ -8,7 +8,8 @@ export interface TimelineEntryProps {
   badgeLabel: string;
   badgeUrl?: string;
   badgeDotColor?: string;
-  description: string;
+  logo?: string;
+  description?: string;
 }
 
 export function TimelineEntry({
@@ -18,6 +19,7 @@ export function TimelineEntry({
   badgeLabel,
   badgeUrl,
   badgeDotColor = "bg-emerald-400",
+  logo,
   description,
 }: TimelineEntryProps) {
   return (
@@ -30,11 +32,18 @@ export function TimelineEntry({
           <span>
             {title} {subtitlePrefix}
           </span>
-          <Badge label={badgeLabel} url={badgeUrl} dotColor={badgeDotColor} />
+          <Badge
+            label={badgeLabel}
+            url={badgeUrl}
+            dotColor={badgeDotColor}
+            logo={logo}
+          />
         </div>
-        <p className="text-[13px] text-muted-foreground leading-relaxed">
-          {description}
-        </p>
+        {description ? (
+          <p className="text-[13px] text-muted-foreground leading-relaxed">
+            {description}
+          </p>
+        ) : null}
       </div>
     </div>
   );

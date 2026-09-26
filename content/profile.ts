@@ -14,7 +14,6 @@ export interface Profile {
   verified: boolean;
   shortBio: string;
   location: string;
-  joinedDate: string;
   about: string;
   aboutSegments: AboutSegment[];
   avatar: string;
@@ -22,13 +21,29 @@ export interface Profile {
   socialLinks: SocialLink[];
 }
 
+export function calculateAge(
+  birthDate: Date = new Date(2006, 10, 29),
+  targetDate: Date = new Date()
+): number {
+  let age = targetDate.getFullYear() - birthDate.getFullYear();
+  const monthDiff = targetDate.getMonth() - birthDate.getMonth();
+  if (
+    monthDiff < 0 ||
+    (monthDiff === 0 && targetDate.getDate() < birthDate.getDate())
+  ) {
+    age--;
+  }
+  return age;
+}
+
 export const profile: Profile = {
   name: "Shreyansh Patni",
   handle: "@shreyanshpatni",
   verified: true,
-  shortBio: "20y/o | Building Tech. /sahaya.tech /th3.media",
+  get shortBio() {
+    return `${calculateAge()}y/o | Building Tech. /sahaya.tech /th3.media`;
+  },
   location: "Bangalore",
-  joinedDate: "November 2024",
   about:
     "Developer and founder building software products, SaaS solutions, and media brands. Pursuing Computer Science & Engineering at PES University and previously completed a diploma at Gujarat Technological University. Currently scaling Sahaya and th3.media.",
   aboutSegments: [

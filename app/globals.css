@@ -51,3 +51,15 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+html.custom-cursor-active,
+html.custom-cursor-active * {
+  cursor: none !important;
+}
+
+html.custom-cursor-active input,
+html.custom-cursor-active textarea,
+html.custom-cursor-active select,
+html.custom-cursor-active [contenteditable="true"] {
+  cursor: text !important;
+}

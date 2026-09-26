@@ -41,6 +41,7 @@ export function EducationSection({
             badgeLabel={item.institution}
             badgeUrl={item.url}
             badgeDotColor="bg-blue-500"
+            logo={item.logo}
             description={item.description}
           />
         ))}

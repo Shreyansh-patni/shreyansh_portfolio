@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/content/profile";
 import { socialAccounts } from "@/content/social";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -88,6 +89,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground font-sans">
+        <SmoothCursor />
         {children}
       </body>
     </html>

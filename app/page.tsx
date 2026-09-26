@@ -6,9 +6,10 @@ import { HackathonsSection } from "@/components/hackathons/HackathonsSection";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { GallerySection } from "@/components/gallery/GallerySection";
 import { SocialLinksSection } from "@/components/social/SocialLinksSection";
-import { BusinessesSection } from "@/components/businesses/BusinessesSection";
+// import { BusinessesSection } from "@/components/businesses/BusinessesSection";
 import { GitHubActivitySection } from "@/components/github/GitHubActivitySection";
 import { SpotifyNowPlaying } from "@/components/spotify/SpotifyNowPlaying";
+import { GlobeFooter } from "@/components/footer/GlobeFooter";
 
 export default function Home() {
   return (
@@ -21,9 +22,10 @@ export default function Home() {
       <ProjectsSection />
       <GallerySection />
       <SocialLinksSection />
-      <BusinessesSection />
+      {/* <BusinessesSection /> */}
       <GitHubActivitySection />
       <SpotifyNowPlaying />
+      <GlobeFooter />
     </main>
   );
 }

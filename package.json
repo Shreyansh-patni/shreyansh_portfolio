@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "cobe": "^0.6.4",
     "motion": "^13.4.4",
     "next": "16.3.6",
     "react": "19.2.8",

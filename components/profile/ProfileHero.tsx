@@ -5,6 +5,39 @@ interface ProfileHeroProps {
   profile?: Profile;
 }
 
+function renderBioWithLinks(bio: string) {
+  const parts = bio.split(/(\/sahaya\.tech|\/th3\.media)/g);
+  return parts.map((part, index) => {
+    if (part === "/sahaya.tech") {
+      return (
+        <a
+          key={index}
+          href="https://sahaya.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline hover:text-foreground transition-colors"
+        >
+          {part}
+        </a>
+      );
+    }
+    if (part === "/th3.media") {
+      return (
+        <a
+          key={index}
+          href="https://th3.media"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline hover:text-foreground transition-colors"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export function ProfileHero({ profile = defaultProfile }: ProfileHeroProps) {
   return (
     <section className="mb-12" data-purpose="hero-section">
@@ -27,7 +60,7 @@ export function ProfileHero({ profile = defaultProfile }: ProfileHeroProps) {
       <div className="px-1.5 relative">
         <div className="flex justify-between items-end -mt-14 sm:-mt-16 mb-3">
           {/* Circular Profile Avatar */}
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-background bg-surface overflow-hidden shadow-xl ring-1 ring-border shrink-0">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 translate-x-[10px] rounded-full border-4 border-background bg-surface overflow-hidden shadow-xl ring-1 ring-border shrink-0">
             <Image
               src={profile.avatar}
               alt={profile.name}
@@ -68,46 +101,28 @@ export function ProfileHero({ profile = defaultProfile }: ProfileHeroProps) {
 
         {/* Bio */}
         <p className="text-[14px] leading-relaxed text-foreground/90 mb-3 font-normal">
-          {profile.shortBio}
+          {renderBioWithLinks(profile.shortBio)}
         </p>
 
-        {/* Metadata: Location & Joined Date */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px] text-muted-foreground">
-          {profile.location && (
-            <div className="flex items-center gap-1.5">
-              <svg
-                className="w-3.5 h-3.5 text-muted-foreground/70 fill-none stroke-current"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  d="M12 21s-6-5.686-6-10A6 6 0 0 1 18 11c0 4.314-6 10-6 10z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle cx="12" cy="11" r="2" />
-              </svg>
-              <span>{profile.location}</span>
-            </div>
-          )}
-          {profile.joinedDate && (
-            <div className="flex items-center gap-1.5">
-              <svg
-                className="w-3.5 h-3.5 text-muted-foreground/70 fill-none stroke-current"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <rect height="18" rx="2" ry="2" width="18" x="3" y="4" />
-                <line x1="16" x2="16" y1="2" y2="6" />
-                <line x1="8" x2="8" y1="2" y2="6" />
-                <line x1="3" x2="21" y1="10" y2="10" />
-              </svg>
-              <span>Joined {profile.joinedDate}</span>
-            </div>
-          )}
-        </div>
+        {/* Metadata: Location */}
+        {profile.location && (
+          <div className="flex items-center gap-1.5 text-[12px] text-muted-foreground">
+            <svg
+              className="w-3.5 h-3.5 text-muted-foreground/70 fill-none stroke-current"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 21s-6-5.686-6-10A6 6 0 0 1 18 11c0 4.314-6 10-6 10z"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="12" cy="11" r="2" />
+            </svg>
+            <span>{profile.location}</span>
+          </div>
+        )}
       </div>
     </section>
   );
