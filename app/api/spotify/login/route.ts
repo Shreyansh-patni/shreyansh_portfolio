@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
   const params = new URLSearchParams({
     response_type: "code",
     client_id: clientId,
-    scope: "user-read-currently-playing",
+    scope: "user-read-currently-playing user-read-recently-played",
     redirect_uri: redirectUri,
     state,
   });

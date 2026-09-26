@@ -2,6 +2,34 @@ import React from "react";
 import Image from "next/image";
 import { getNowPlaying } from "@/lib/spotify";
 
+function formatPlayedAt(playedAt?: string): string {
+  if (!playedAt) return "";
+  const date = new Date(playedAt);
+  if (isNaN(date.getTime())) return "";
+
+  const now = new Date();
+  const isToday =
+    date.getDate() === now.getDate() &&
+    date.getMonth() === now.getMonth() &&
+    date.getFullYear() === now.getFullYear();
+
+  const timeStr = date.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+  if (isToday) {
+    return `Played at ${timeStr}`;
+  }
+
+  const dateStr = date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+  return `Played ${dateStr} at ${timeStr}`;
+}
+
 export async function SpotifyNowPlaying() {
   const data = await getNowPlaying();
 
@@ -14,9 +42,13 @@ export async function SpotifyNowPlaying() {
       </div>
 
       <div className="p-4 rounded-xl bg-surface/40 border border-border/60">
-        {data.status === "unconfigured" || data.status === "error" ? (
+        {data.status === "unconfigured" ? (
           <div className="text-[13px] text-muted-foreground font-medium py-1">
             Spotify isn&apos;t connected yet.
+          </div>
+        ) : data.status === "error" ? (
+          <div className="text-[13px] text-muted-foreground font-medium py-1">
+            Spotify is temporarily unavailable.
           </div>
         ) : data.status === "idle" ? (
           <div className="flex items-center gap-3">
@@ -29,8 +61,13 @@ export async function SpotifyNowPlaying() {
                 <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
               </svg>
             </div>
-            <div className="text-[13px] text-muted-foreground font-medium">
-              Not playing right now
+            <div>
+              <div className="text-[13px] text-muted-foreground font-medium">
+                Not listening right now
+              </div>
+              <div className="text-[12px] text-muted-foreground/70">
+                Spotify is connected, but nothing is currently playing.
+              </div>
             </div>
           </div>
         ) : (
@@ -68,6 +105,11 @@ export async function SpotifyNowPlaying() {
                       </span>
                       Listening now
                     </span>
+                  ) : data.status === "recent" ? (
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground font-medium">
+                      <span className="h-2 w-2 rounded-full bg-muted-foreground/50"></span>
+                      Last played
+                    </span>
                   ) : (
                     <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground font-medium">
                       <span className="h-2 w-2 rounded-full bg-muted-foreground/50"></span>
@@ -92,6 +134,12 @@ export async function SpotifyNowPlaying() {
                 {data.track.album && (
                   <div className="text-[12px] text-muted-foreground/70 truncate">
                     {data.track.album}
+                  </div>
+                )}
+
+                {data.status === "recent" && data.track.playedAt && (
+                  <div className="text-[12px] text-muted-foreground/70 font-mono mt-0.5">
+                    {formatPlayedAt(data.track.playedAt)}
                   </div>
                 )}
               </div>
