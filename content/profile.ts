@@ -1,3 +1,7 @@
+export type AboutSegment =
+  | { type: "text"; value: string }
+  | { type: "highlight"; value: string };
+
 export interface SocialLink {
   platform: string;
   label: string;
@@ -12,6 +16,7 @@ export interface Profile {
   location: string;
   joinedDate: string;
   about: string;
+  aboutSegments: AboutSegment[];
   avatar: string;
   banner: string;
   socialLinks: SocialLink[];
@@ -25,7 +30,45 @@ export const profile: Profile = {
   location: "BLR / BDQ",
   joinedDate: "November 2024",
   about:
-    "Developer and founder building software products, SaaS solutions, and media brands.",
+    "Developer and founder building software products, SaaS solutions, and media brands. Pursuing Computer Science & Engineering at PES University and previously completed a diploma at Gujarat Technological University. Currently scaling Sahaya and th3.media.",
+  aboutSegments: [
+    {
+      type: "text",
+      value: "Developer and founder building ",
+    },
+    {
+      type: "highlight",
+      value: "software products, SaaS solutions, and media brands",
+    },
+    {
+      type: "text",
+      value: ". Pursuing ",
+    },
+    {
+      type: "highlight",
+      value: "Computer Science & Engineering at PES University",
+    },
+    {
+      type: "text",
+      value: " and previously completed a diploma at ",
+    },
+    {
+      type: "highlight",
+      value: "Gujarat Technological University",
+    },
+    {
+      type: "text",
+      value: ". Currently scaling ",
+    },
+    {
+      type: "highlight",
+      value: "Sahaya and th3.media",
+    },
+    {
+      type: "text",
+      value: ".",
+    },
+  ],
   avatar: "/images/profile/avatar.png",
   banner: "/images/profile/banner.png",
   socialLinks: [
