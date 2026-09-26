@@ -5,6 +5,7 @@ import { EducationSection } from "@/components/education/EducationSection";
 import { HackathonsSection } from "@/components/hackathons/HackathonsSection";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { GallerySection } from "@/components/gallery/GallerySection";
+import { SocialLinksSection } from "@/components/social/SocialLinksSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <HackathonsSection />
       <ProjectsSection />
       <GallerySection />
+      <SocialLinksSection />
     </main>
   );
 }
