@@ -1,9 +1,9 @@
+import { ProfileHero } from "@/components/profile/ProfileHero";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-6 text-center">
-      <h1 className="text-xl font-medium tracking-tight text-foreground">
-        Portfolio foundation ready
-      </h1>
+    <main className="max-w-[620px] mx-auto px-5 sm:px-6 pt-8 pb-20 w-full">
+      <ProfileHero />
     </main>
   );
 }

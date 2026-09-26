@@ -21,13 +21,13 @@ export const profile: Profile = {
   name: "Shreyansh Patni",
   handle: "@shreyanshpatni_",
   verified: true,
-  shortBio: "Building Tech.",
+  shortBio: "20y/o | Building Tech. /sahaya.tech /th3.media",
   location: "BLR / BDQ",
   joinedDate: "November 2024",
   about:
     "Developer and founder building software products, SaaS solutions, and media brands.",
-  avatar: "/avatar.jpg",
-  banner: "/banner.jpg",
+  avatar: "/images/profile/avatar.png",
+  banner: "/images/profile/banner.png",
   socialLinks: [
     {
       platform: "Website",
