@@ -8,6 +8,7 @@ import { GallerySection } from "@/components/gallery/GallerySection";
 import { SocialLinksSection } from "@/components/social/SocialLinksSection";
 import { BusinessesSection } from "@/components/businesses/BusinessesSection";
 import { GitHubActivitySection } from "@/components/github/GitHubActivitySection";
+import { SpotifyNowPlaying } from "@/components/spotify/SpotifyNowPlaying";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <SocialLinksSection />
       <BusinessesSection />
       <GitHubActivitySection />
+      <SpotifyNowPlaying />
     </main>
   );
 }
