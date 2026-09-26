@@ -36,10 +36,10 @@ export const metadata: Metadata = {
       "Developer and founder building software products, SaaS solutions, and media brands.",
     images: [
       {
-        url: "/images/profile/banner.png",
+        url: "https://shreyansh.cc/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Shreyansh Patni",
+        alt: "Shreyansh Patni — Developer & Founder",
       },
     ],
   },
@@ -49,7 +49,12 @@ export const metadata: Metadata = {
     description:
       "Developer and founder building software products, SaaS solutions, and media brands.",
     creator: "@shreyanshpatni_",
-    images: ["/images/profile/banner.png"],
+    images: ["https://shreyansh.cc/images/og-image.png"],
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
 };
 
