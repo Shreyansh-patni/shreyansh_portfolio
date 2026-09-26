@@ -25,14 +25,9 @@ export function ExperienceSection({
 }: ExperienceSectionProps) {
   return (
     <section className="mb-14" data-purpose="experience-timeline">
-      <div className="text-[11px] font-mono tracking-widest uppercase text-muted-foreground mb-1.5 font-medium">
+      <div className="text-[11px] font-mono tracking-widest uppercase text-muted-foreground mb-6 font-medium">
         EXPERIENCE
       </div>
-      <p className="text-[13px] text-muted-foreground mb-7">
-        Throughout my career, I&apos;ve worked on various projects, from building
-        scalable systems to designing user-friendly interfaces. Here&apos;s a brief
-        overview.
-      </p>
       <Timeline>
         {items.map((item) => (
           <TimelineEntry

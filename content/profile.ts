@@ -24,10 +24,10 @@ export interface Profile {
 
 export const profile: Profile = {
   name: "Shreyansh Patni",
-  handle: "@shreyanshpatni_",
+  handle: "@shreyanshpatni",
   verified: true,
   shortBio: "20y/o | Building Tech. /sahaya.tech /th3.media",
-  location: "BLR / BDQ",
+  location: "Bangalore",
   joinedDate: "November 2024",
   about:
     "Developer and founder building software products, SaaS solutions, and media brands. Pursuing Computer Science & Engineering at PES University and previously completed a diploma at Gujarat Technological University. Currently scaling Sahaya and th3.media.",
