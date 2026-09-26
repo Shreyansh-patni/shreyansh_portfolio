@@ -19,19 +19,19 @@ export const projects: Project[] = [
     status: "Active",
   },
   {
-    id: "self-checkout-pos",
-    name: "Self-Checkout POS Prototype",
-    description:
-      "Automated self-checkout point-of-sale prototype system.",
-    technologies: ["TypeScript", "React"],
-    status: "Prototype",
-  },
-  {
     id: "agency-os",
     name: "Agency OS",
     description:
       "Internal operations and client workflow management platform.",
     technologies: ["Next.js", "TypeScript"],
     status: "In Development",
+  },
+  {
+    id: "self-checkout-pos",
+    name: "Self-Checkout POS Prototype",
+    description:
+      "Automated self-checkout point-of-sale prototype system.",
+    technologies: ["TypeScript", "React"],
+    status: "Prototype",
   },
 ];
