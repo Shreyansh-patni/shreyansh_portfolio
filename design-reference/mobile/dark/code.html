@@ -1,0 +1,265 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Shreyansh Patni - Portfolio</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#080808',
+            surfaceDark: '#121214',
+            borderSubtle: '#26262a',
+            textPrimary: '#ededed',
+            textSecondary: '#8e8e93',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Inter', 'sans-serif'],
+            mono: ['"SF Mono"', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-typography">
+    body {
+      background-color: #080808;
+      color: #ededed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Subtle underline styling matching reference */
+    .highlight-underline {
+      text-decoration-line: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #ededed;
+      font-weight: 600;
+    }
+  </style>
+<style data-purpose="avatar-crop">
+    /* Precise framing for the circular avatar using the profile extract */
+    .avatar-frame {
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+      border-radius: 9999px;
+      border: 3.5px solid #080808;
+      background-color: #121212;
+    }
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 33.8% 50%;
+      transform: scale(2.8);
+    }
+  </style>
+</head>
+<body class="bg-brandDark text-textPrimary flex justify-center min-h-screen">
+<!-- Mobile Screen Container -->
+<div class="w-full max-w-[430px] min-h-screen px-4 pt-3 pb-16 flex flex-col antialiased">
+<!-- BEGIN: BannerAndProfileHeader -->
+<header class="relative w-full mb-3" data-purpose="profile-header">
+<!-- Top Banner Frame -->
+<div class="relative w-full aspect-[2.75/1] rounded-2xl overflow-hidden bg-neutral-900 border border-white/5 shadow-inner">
+<!-- Close / Cross Icon Button -->
+<button aria-label="Close" class="absolute top-2.5 left-2.5 z-10 w-7 h-7 flex items-center justify-center text-white/90 bg-black/40 hover:bg-black/60 backdrop-blur-md rounded-full transition-colors" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+<!-- Breach Whale Banner Image -->
+<img alt="Whale breach grayscale banner" class="w-full h-full object-cover object-center pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV6NeQCUQX1qBR1aG_zoEU-tGG0T43-gQYIbyQAiniZTieS-GK_wfYiLAW_mQLumijZGpaWH9GdFty6iJopSrf7gCr3nkzzQdDvlyc8tJC2si8i4IELtD3pEU9o4hxnwBxSP0Uwb9k8SDbSvnH_qJZLVLydeuGVTydX4lLqxLs3XiL2ai8GyKayVqYD4zmEmtRIHgueNqNUYhEA7IncBOAhXKtLnx4CufO7dxxeLpGRAgrxQOgHRYDEr_tvJvpY3k8QF8">
+</div>
+<!-- Overlapping Circular Avatar -->
+<div class="absolute -bottom-8 left-3.5 z-20">
+<div class="avatar-frame shadow-xl ring-1 ring-white/10">
+<img alt="Shreyansh Patni" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh-O4HcVPViiOYv1qDFTXuJgjb56_owp6kDDbRZ4gQPp_xkGI-aZpYvjQ4D330Zmr4wP942Qybdm0QTaz50PcaN2-czwsp4Vcwi9jJVmwAmhu-63h3flCCvCwrFJDwiJZ-Zx-OGoRGoPw35h-HbObOVFEOHwamBoHrtQ2hFcNTUr0xOVlJXcU38--04mIGQiKkXpjFOzZlWp4GAzUX0pfQZBscNWlsbtNYgmWzSVaVJTOaNfeqbBXCCmwhr80THXCUiMQ">
+</div>
+</div>
+</header>
+<!-- END: BannerAndProfileHeader -->
+<!-- BEGIN: ProfileInfo -->
+<section class="pt-8 px-1 mb-8" data-purpose="profile-info">
+<!-- Full Name with Verified Badge -->
+<div class="flex items-center gap-1.5 mb-0.5">
+<h1 class="text-xl font-bold tracking-tight text-white">Shreyansh Patni</h1>
+<!-- Verified Checkmark Badge -->
+<svg class="w-4 h-4 text-[#3897f0] fill-current shrink-0" viewBox="0 0 24 24">
+<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="none"></path>
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.8 14.6l-3.9-3.9 1.4-1.4 2.5 2.5 6.9-6.9 1.4 1.4-8.3 8.3z"></path>
+</svg>
+</div>
+<!-- Handle -->
+<p class="text-sm text-textSecondary font-normal mb-3">@shreyanshpatni_</p>
+<!-- Bio Summary -->
+<p class="text-[13.5px] leading-relaxed text-[#d1d5db] font-normal mb-3">
+        20y/o | Building Tech. /sahaya.tech /th3.media
+      </p>
+<!-- Location & Date Metadata -->
+<div class="flex items-center flex-wrap gap-x-4 gap-y-1 text-xs text-textSecondary">
+<!-- Location -->
+<div class="flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 shrink-0 text-textSecondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>BLR / BDQ</span>
+</div>
+<!-- Joined Date -->
+<div class="flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 shrink-0 text-textSecondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+<span>Joined November 2024</span>
+</div>
+</div>
+</section>
+<!-- END: ProfileInfo -->
+<!-- BEGIN: AboutSection -->
+<section class="px-1 mb-10" data-purpose="about-section">
+<h2 class="text-base font-bold text-white mb-3 tracking-tight">About</h2>
+<p class="text-[13.5px] leading-[1.65] text-[#b3b3b3]">
+        At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, <span class="highlight-underline text-white">I pursued a double degree in computer science and business</span>, <span class="highlight-underline text-white">interned at big tech companies in Silicon Valley</span>, and <span class="highlight-underline text-white">competed in over 21 hackathons for fun</span>. I also had the pleasure of being a part of the first ever in-person cohort of buildspace called <span class="highlight-underline text-white">buildspace sf1</span>.
+      </p>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: ExperienceSection -->
+<section class="px-1 mb-10" data-purpose="experience-section">
+<!-- Section Label -->
+<h3 class="font-mono text-[11px] font-semibold tracking-wider text-textSecondary uppercase mb-2">
+        EXPERIENCE
+      </h3>
+<p class="text-xs text-[#a0a0a5] leading-relaxed mb-6">
+        Throughout my career, I've worked on various projects, from building scalable systems to designing user-friendly interfaces. Here's a brief overview.
+      </p>
+<!-- Experience Items Timeline -->
+<div class="space-y-6">
+<!-- Experience Item 1 -->
+<article class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-mono text-[11px] text-textSecondary font-medium">2024 — NOW</span>
+</div>
+<div class="flex items-baseline flex-wrap gap-2 mb-1">
+<h4 class="text-[13.5px] font-medium text-white">Design engineer at</h4>
+<!-- Status Badge Pill -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#1a1b1e] border border-[#2e3036] text-[#e0e0e0]">
+              Wait
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</span>
+</div>
+<p class="text-xs text-[#9a9aa0] leading-relaxed">
+            Designed a real-time waitlist and dashboard for monitoring sign ups with live updates, reducing latency by 15%
+          </p>
+</article>
+<!-- Experience Item 2 -->
+<article class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-mono text-[11px] text-textSecondary font-medium">2024 — NOW</span>
+</div>
+<div class="flex items-baseline flex-wrap gap-2 mb-1">
+<h4 class="text-[13.5px] font-medium text-white">Design engineer at</h4>
+<!-- Status Badge Pill -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#1a1b1e] border border-[#2e3036] text-[#e0e0e0]">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              Omega
+            </span>
+</div>
+<p class="text-xs text-[#9a9aa0] leading-relaxed">
+            Designed and built an admin panel for enterprise clients, scaling to support over 500 active users per instance.
+          </p>
+</article>
+<!-- Experience Item 3 -->
+<article class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-mono text-[11px] text-textSecondary font-medium">2017 — 2020</span>
+</div>
+<div class="flex items-baseline flex-wrap gap-2 mb-1">
+<h4 class="text-[13.5px] font-medium text-white">Software engineer at at</h4>
+<!-- Status Badge Pill -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#1a1b1e] border border-[#2e3036] text-[#e0e0e0]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Theta
+            </span>
+</div>
+<p class="text-xs text-[#9a9aa0] leading-relaxed">
+            Developed the user interface for a crypto payment gateway, ensuring compliance with global accessibility standards.
+          </p>
+</article>
+</div>
+</section>
+<!-- END: ExperienceSection -->
+<!-- BEGIN: EducationSection -->
+<section class="px-1 mb-6" data-purpose="education-section">
+<!-- Section Label -->
+<h3 class="font-mono text-[11px] font-semibold tracking-wider text-textSecondary uppercase mb-5">
+        EDUCATION
+      </h3>
+<!-- Education Items -->
+<div class="space-y-6">
+<!-- Education Item 1 -->
+<article class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-mono text-[11px] text-textSecondary font-medium">2020 — 2024</span>
+</div>
+<div class="flex items-baseline flex-wrap gap-1.5 mb-1">
+<h4 class="text-[13.5px] font-medium text-white">
+              Bachelor's Degree in Computer Science and Business at
+            </h4>
+<!-- Status Badge Pill -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#1a1b1e] border border-[#2e3036] text-[#e0e0e0]">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              University
+            </span>
+</div>
+<p class="text-xs text-[#9a9aa0] leading-relaxed">
+            Specialized in software engineering, distributed systems, and product development. Dean's List and hackathon lead.
+          </p>
+</article>
+<!-- Education Item 2 -->
+<article class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-mono text-[11px] text-textSecondary font-medium">2023</span>
+</div>
+<div class="flex items-baseline flex-wrap gap-2 mb-1">
+<h4 class="text-[13.5px] font-medium text-white">Fellow at</h4>
+<!-- Status Badge Pill -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#1a1b1e] border border-[#2e3036] text-[#e0e0e0]">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              buildspace sf1
+            </span>
+</div>
+<p class="text-xs text-[#9a9aa0] leading-relaxed">
+            Part of the first ever in-person cohort of buildspace in San Francisco, building and shipping consumer and developer software tools.
+          </p>
+</article>
+<!-- Education Item 3 -->
+<article class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-mono text-[11px] text-textSecondary font-medium">2018 — 2020</span>
+</div>
+<div class="flex items-baseline flex-wrap gap-2 mb-1">
+<h4 class="text-[13.5px] font-medium text-white">Higher Secondary Education</h4>
+<!-- Status Badge Pill -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#1a1b1e] border border-[#2e3036] text-[#e0e0e0]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              High School
+            </span>
+</div>
+<p class="text-xs text-[#9a9aa0] leading-relaxed">
+            Major in Mathematics and Computer Science with highest distinction.
+          </p>
+</article>
+</div>
+</section>
+<!-- END: EducationSection -->
+</div>
+</body></html>

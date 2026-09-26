@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Shreyansh Patni — Portfolio</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          },
+          colors: {
+            neutral: {
+              850: '#1f242e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-typography">
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #ffffff;
+      color: #111827;
+    }
+    .custom-underline {
+      text-decoration-line: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+  </style>
+<style data-purpose="avatar-style">
+    /* Avatar specific crop using the user screenshot */
+    .avatar-img {
+      object-fit: cover;
+      object-position: 33% 48%;
+      transform: scale(2.4);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen flex justify-center selection:bg-gray-100 selection:text-black">
+<!-- Mobile View Container (~390px calibrated) -->
+<main class="w-full max-w-[420px] px-4 pt-3 pb-16 flex flex-col">
+<!-- BEGIN: HeaderBanner -->
+<header class="relative w-full" data-purpose="profile-header">
+<!-- Whale Breach Cover Image -->
+<div class="relative w-full h-[154px] rounded-2xl overflow-hidden bg-neutral-900 shadow-sm">
+<img alt="Whale breach banner" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu8wC_HQj8WDcWaa0sTMUuKpINDjUf3dVz9ZbYeIJhzSSU-R3HnA-EVjv9EO2m2NrGznLrQ2ryPidbUBSyRRITY5dbCFQ6NzYT3bC8SOFgPTDJchP-J3di87V_fPzL_iBk3dHBS8cVe1sRflTY-mwz-w-uL631sf3mvdg-PYVUyysGTk2YWbY64_DnV6DtX2fYcKXEi6mWX9elP14j0XxvOUfzZcgJgdtndt_vLMDWDR8ifj7AW_QSJQSbarBUsXX33KI">
+<!-- Close/Dismiss Icon Button -->
+<button aria-label="Close" class="absolute top-3 left-3 w-7 h-7 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md flex items-center justify-center text-white transition-colors duration-150 cursor-pointer" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</div>
+<!-- Overlapping Circular Avatar -->
+<div class="relative -mt-10 ml-4 inline-block">
+<div class="w-[78px] h-[78px] rounded-full ring-[4px] ring-white overflow-hidden bg-zinc-900 shadow-sm relative">
+<img alt="Shreyansh Patni" class="avatar-img w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7ovgwUiiVehqHZn_1PBKLKmmlaMrQOF2arAxqj5rYsUwt7jYek-Avw6sZr4VlI7fC-OD7qXzbjlABfyHWRzfuOK5wZMc5-ROSU4xmVdo2RiRcO5oFwVNjTNull3CqEDUy07GwB7UxhHsUt_bvjlIqk2AETP3pXYmSv6KipWvVIrIGFoq0LXg3M9yNxIoIRaMw3a4oEM5dBBqRQd_dydkEog9HK-6sAvoziENWJO5O9AWfoA628Ad-Tj1kdUrPDUw5WFY">
+</div>
+</div>
+</header>
+<!-- END: HeaderBanner -->
+<!-- BEGIN: ProfileInfo -->
+<section class="mt-3 px-1" data-purpose="profile-details">
+<!-- Name and Verified Badge -->
+<div class="flex items-center gap-1.5">
+<h1 class="text-[20px] font-bold tracking-tight text-gray-950">Shreyansh Patni</h1>
+<!-- Verified Checkmark Badge -->
+<svg aria-label="Verified account" class="w-[18px] h-[18px] text-[#1d9bf0] shrink-0 fill-current" viewBox="0 0 24 24">
+<path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"></path>
+</svg>
+</div>
+<!-- Handle -->
+<p class="text-[13px] text-gray-500 font-normal leading-tight mt-0.5">@shreyanshpatni_</p>
+<!-- Bio Statement -->
+<p class="text-[13px] text-gray-700 leading-snug mt-2.5 font-normal">
+        20y/o | Building Tech. /sahaya.tech /th3.media
+      </p>
+<!-- Location & Join Date Metadata -->
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-[12px] text-gray-500 font-normal">
+<span class="flex items-center gap-1">
+<!-- Pin Icon -->
+<svg class="w-3.5 h-3.5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          BLR / BDQ
+        </span>
+<span class="flex items-center gap-1">
+<!-- Calendar Icon -->
+<svg class="w-3.5 h-3.5 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Joined November 2024
+        </span>
+</div>
+</section>
+<!-- END: ProfileInfo -->
+<!-- BEGIN: AboutSection -->
+<section class="mt-6 px-1" data-purpose="about-section">
+<h2 class="text-[17px] font-bold text-gray-900 tracking-tight mb-2">About</h2>
+<p class="text-[12.5px] leading-relaxed text-gray-700">
+        At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, <span class="custom-underline text-gray-900 font-medium">I pursued a double degree in computer science and business</span>, <span class="custom-underline text-gray-900 font-medium">interned at big tech companies in Silicon Valley</span>, and <span class="custom-underline text-gray-900 font-medium">competed in over 21 hackathons for fun</span>. I also had the pleasure of being a part of the first ever in-person cohort of buildspace called <span class="custom-underline text-gray-900 font-medium">buildspace sf1</span>.
+      </p>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: ExperienceSection -->
+<section class="mt-7 px-1" data-purpose="experience-section">
+<div class="mb-3.5">
+<h3 class="text-[11px] font-mono tracking-wider text-gray-400 uppercase font-medium">EXPERIENCE</h3>
+<p class="text-[12px] text-gray-500 leading-snug mt-1">
+          Throughout my career, I've worked on various projects, from building scalable systems to designing user-friendly interfaces. Here's a brief overview.
+        </p>
+</div>
+<!-- Experience Items List -->
+<div class="space-y-4 pt-1">
+<!-- Item 1: Wait -->
+<div class="flex flex-col gap-0.5" data-purpose="timeline-item">
+<div class="text-[11.5px] font-mono text-gray-400 tracking-tight">2024 — NOW</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-0.5">
+<span class="text-[13px] font-semibold text-gray-900">Design engineer at</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-[11px] font-medium text-gray-800">
+              Wait
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>
+</span>
+</div>
+<p class="text-[12px] leading-snug text-gray-600 mt-1">
+            Designed a real-time waitlist and dashboard for monitoring sign ups with live updates, reducing latency by 15%
+          </p>
+</div>
+<!-- Item 2: Omega -->
+<div class="flex flex-col gap-0.5" data-purpose="timeline-item">
+<div class="text-[11.5px] font-mono text-gray-400 tracking-tight">2024 — NOW</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-0.5">
+<span class="text-[13px] font-semibold text-gray-900">Design engineer at</span>
+<span class="inline-flex items-center gap-1.5 px-1.5 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-[11px] font-medium text-gray-800">
+<span class="w-2 h-2 rounded-full border border-sky-500 inline-block"></span>
+              Omega
+            </span>
+</div>
+<p class="text-[12px] leading-snug text-gray-600 mt-1">
+            Designed and built an admin panel for enterprise clients, scaling to support over 500 active users per instance.
+          </p>
+</div>
+<!-- Item 3: Theta -->
+<div class="flex flex-col gap-0.5" data-purpose="timeline-item">
+<div class="text-[11.5px] font-mono text-gray-400 tracking-tight">2017 — 2020</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-0.5">
+<span class="text-[13px] font-semibold text-gray-900">Software engineer at</span>
+<span class="inline-flex items-center gap-1.5 px-1.5 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-[11px] font-medium text-gray-800">
+<span class="w-1.5 h-1.5 bg-emerald-500 inline-block"></span>
+              Theta
+            </span>
+</div>
+<p class="text-[12px] leading-snug text-gray-600 mt-1">
+            Developed the user interface for a crypto payment gateway, ensuring compliance with global accessibility standards.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: ExperienceSection -->
+<!-- BEGIN: EducationSection -->
+<section class="mt-7 px-1" data-purpose="education-section">
+<div class="mb-3.5">
+<h3 class="text-[11px] font-mono tracking-wider text-gray-400 uppercase font-medium">EDUCATION</h3>
+</div>
+<!-- Education Items List -->
+<div class="space-y-4 pt-1">
+<!-- Education 1: University -->
+<div class="flex flex-col gap-0.5" data-purpose="timeline-item">
+<div class="text-[11.5px] font-mono text-gray-400 tracking-tight">2020 — 2024</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-0.5">
+<span class="text-[13px] font-semibold text-gray-900 leading-snug">Bachelor's Degree in Computer Science and Business at</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-[11px] font-medium text-gray-800">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 inline-block"></span>
+              University
+            </span>
+</div>
+<p class="text-[12px] leading-snug text-gray-600 mt-1">
+            Specialized in software engineering, distributed systems, and product development. Dean's List and hackathon lead.
+          </p>
+</div>
+<!-- Education 2: Buildspace -->
+<div class="flex flex-col gap-0.5" data-purpose="timeline-item">
+<div class="text-[11.5px] font-mono text-gray-400 tracking-tight">2023</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-0.5">
+<span class="text-[13px] font-semibold text-gray-900">Fellow at</span>
+<span class="inline-flex items-center gap-1.5 px-1.5 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-[11px] font-medium text-gray-800">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500 inline-block"></span>
+              buildspace sf1
+            </span>
+</div>
+<p class="text-[12px] leading-snug text-gray-600 mt-1">
+            Part of the first ever in-person cohort of buildspace in San Francisco, building and shipping consumer and developer software tools.
+          </p>
+</div>
+<!-- Education 3: High School -->
+<div class="flex flex-col gap-0.5" data-purpose="timeline-item">
+<div class="text-[11.5px] font-mono text-gray-400 tracking-tight">2018 — 2020</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-0.5">
+<span class="text-[13px] font-semibold text-gray-900">Higher Secondary Education</span>
+<span class="inline-flex items-center gap-1.5 px-1.5 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-[11px] font-medium text-gray-800">
+<span class="w-1.5 h-1.5 bg-emerald-500 inline-block"></span>
+              High School
+            </span>
+</div>
+<p class="text-[12px] leading-snug text-gray-600 mt-1">
+            Major in Mathematics and Computer Science with highest distinction.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: EducationSection -->
+</main>
+</body></html>
