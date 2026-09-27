@@ -63,3 +63,14 @@ html.custom-cursor-active select,
 html.custom-cursor-active [contenteditable="true"] {
   cursor: text !important;
 }
+
+::selection {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+::-moz-selection {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
