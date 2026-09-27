@@ -63,7 +63,7 @@ export function Dock({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "supports-backdrop-blur:bg-surface/75 flex h-[58px] items-center justify-center gap-2 rounded-full border border-border/40 bg-surface/80 p-2 backdrop-blur-xl shadow-xl shadow-black/5 dark:shadow-black/30 transition-colors",
+        "glass-dock flex h-[58px] items-center justify-center gap-2 rounded-full p-2",
         direction === "top" && "items-start",
         direction === "middle" && "items-center",
         direction === "bottom" && "items-end",
@@ -282,7 +282,7 @@ export function FloatingNavbar() {
               </Link>
 
               {/* Accessible Tooltip */}
-              <span className="absolute -top-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none px-2 py-0.5 rounded-md bg-foreground text-background text-[11px] font-mono whitespace-nowrap shadow-md">
+              <span className="absolute -top-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none px-2.5 py-0.5 rounded-md glass-tooltip text-[11px] font-mono whitespace-nowrap shadow-md">
                 {item.label}
               </span>
 
@@ -328,7 +328,7 @@ export function FloatingNavbar() {
           </button>
 
           {/* Accessible Tooltip */}
-          <span className="absolute -top-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none px-2 py-0.5 rounded-md bg-foreground text-background text-[11px] font-mono whitespace-nowrap shadow-md">
+          <span className="absolute -top-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none px-2.5 py-0.5 rounded-md glass-tooltip text-[11px] font-mono whitespace-nowrap shadow-md">
             Theme
           </span>
         </DockIcon>

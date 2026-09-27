@@ -23,7 +23,7 @@ const SPOTIFY_CURRENTLY_PLAYING_ENDPOINT =
   "https://api.spotify.com/v1/me/player/currently-playing";
 const SPOTIFY_RECENTLY_PLAYED_ENDPOINT =
   "https://api.spotify.com/v1/me/player/recently-played?limit=1";
-const REVALIDATE_SECONDS = 30;
+export const REVALIDATE_SECONDS = 30;
 const TIMEOUT_MS = 5000;
 
 interface SpotifyTokenResponse {

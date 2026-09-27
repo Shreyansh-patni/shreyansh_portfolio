@@ -27,7 +27,7 @@ export function SocialLinksSection({
             href={account.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between p-3 rounded-lg bg-surface/50 hover:bg-surface border border-border/60 hover:border-border transition-all"
+            className="group flex items-center justify-between p-3 rounded-lg glass-interactive"
           >
             <span className="text-[13px] font-medium text-foreground group-hover:text-accent transition-colors">
               {account.platform}

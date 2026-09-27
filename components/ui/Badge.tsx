@@ -15,7 +15,7 @@ export function Badge({
   logo,
 }: BadgeProps) {
   const content = (
-    <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-surface border border-border text-foreground text-[11px] rounded-md font-medium">
+    <span className="inline-flex items-center gap-1.5 px-2 py-0.5 glass-pill text-foreground text-[11px] rounded-md font-medium">
       {logo ? (
         <Image
           src={logo}

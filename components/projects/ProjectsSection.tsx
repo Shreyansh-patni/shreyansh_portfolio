@@ -67,7 +67,7 @@ export function ProjectsSection({
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="text-[11px] font-mono bg-surface text-muted-foreground px-2 py-0.5 border border-border rounded-md"
+                    className="text-[11px] font-mono glass-pill text-muted-foreground px-2 py-0.5 rounded-md"
                   >
                     {tech}
                   </span>

@@ -45,7 +45,7 @@ export function SpotifyNowPlaying() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [progressMs, setProgressMs] = useState<number>(0);
   
-  const lastFetchedAtRef = useRef<number>(Date.now());
+  const lastFetchedAtRef = useRef<number>(0);
   const trackIdRef = useRef<string>("");
 
   const fetchNowPlaying = useCallback(async () => {
@@ -75,10 +75,12 @@ export function SpotifyNowPlaying() {
 
   // Initial fetch and setup event listeners for tab focus / visibility
   useEffect(() => {
-    fetchNowPlaying();
+    const timer = setTimeout(() => {
+      void fetchNowPlaying();
+    }, 0);
 
     const handleFocus = () => {
-      fetchNowPlaying();
+      void fetchNowPlaying();
     };
 
     const handleVisibilityChange = () => {
@@ -91,6 +93,7 @@ export function SpotifyNowPlaying() {
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("focus", handleFocus);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
@@ -217,7 +220,7 @@ export function SpotifyNowPlaying() {
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     {data.status === "playing" ? (
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-500 font-medium">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-500 font-medium glass-pill px-2 py-0.5 rounded-full">
                         <span className="relative flex h-2 w-2">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -225,12 +228,12 @@ export function SpotifyNowPlaying() {
                         Listening now
                       </span>
                     ) : data.status === "recent" ? (
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground font-medium">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground font-medium glass-pill px-2 py-0.5 rounded-full">
                         <span className="h-2 w-2 rounded-full bg-muted-foreground/50"></span>
                         Last played
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground font-medium">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground font-medium glass-pill px-2 py-0.5 rounded-full">
                         <span className="h-2 w-2 rounded-full bg-amber-500/80"></span>
                         Paused
                       </span>
