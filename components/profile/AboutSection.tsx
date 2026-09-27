@@ -1,5 +1,6 @@
 import React from "react";
 import { aboutData as defaultAboutData, type AboutContent } from "@/content/about";
+import { Badge } from "@/components/ui/Badge";
 
 interface AboutSectionProps {
   data?: AboutContent;
@@ -89,9 +90,9 @@ export function AboutSection({ data = defaultAboutData }: AboutSectionProps) {
                 {idx > 0 && (
                   <span className="text-muted-foreground/40 select-none">·</span>
                 )}
-                <span className="px-2 py-0.5 glass-pill rounded-md text-foreground/90 font-medium">
+                <Badge variant="outline">
                   {interest}
-                </span>
+                </Badge>
               </React.Fragment>
             ))}
           </div>
