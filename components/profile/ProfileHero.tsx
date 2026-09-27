@@ -104,25 +104,48 @@ export function ProfileHero({ profile = defaultProfile }: ProfileHeroProps) {
           {renderBioWithLinks(profile.shortBio)}
         </p>
 
-        {/* Metadata: Location */}
-        {profile.location && (
-          <div className="flex items-center gap-1.5 text-[12px] text-muted-foreground">
-            <svg
-              className="w-3.5 h-3.5 text-muted-foreground/70 fill-none stroke-current"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
+        {/* Metadata: Location & Email */}
+        <div className="flex flex-wrap items-center gap-4 text-[12px] text-muted-foreground">
+          {profile.location && (
+            <div className="flex items-center gap-1.5">
+              <svg
+                className="w-3.5 h-3.5 text-muted-foreground/70 fill-none stroke-current"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 21s-6-5.686-6-10A6 6 0 0 1 18 11c0 4.314-6 10-6 10z"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <circle cx="12" cy="11" r="2" />
+              </svg>
+              <span>{profile.location}</span>
+            </div>
+          )}
+          {profile.email && (
+            <a
+              href={`mailto:${profile.email}`}
+              className="flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
-              <path
-                d="M12 21s-6-5.686-6-10A6 6 0 0 1 18 11c0 4.314-6 10-6 10z"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle cx="12" cy="11" r="2" />
-            </svg>
-            <span>{profile.location}</span>
-          </div>
-        )}
+              <svg
+                className="w-3.5 h-3.5 text-muted-foreground/70 fill-none stroke-current"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <polyline points="22,6 12,13 2,6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>{profile.email}</span>
+            </a>
+          )}
+        </div>
       </div>
     </section>
   );

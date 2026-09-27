@@ -11,6 +11,7 @@ export interface SocialLink {
 export interface Profile {
   name: string;
   handle: string;
+  email: string;
   verified: boolean;
   shortBio: string;
   location: string;
@@ -39,6 +40,7 @@ export function calculateAge(
 export const profile: Profile = {
   name: "Shreyansh Patni",
   handle: "@shreyanshpatni",
+  email: "Shreyansh@sahaya.tech",
   verified: true,
   get shortBio() {
     return `${calculateAge()}y/o | Building Tech. /sahaya.tech /th3.media`;

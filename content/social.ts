@@ -50,4 +50,11 @@ export const socialAccounts: SocialAccount[] = [
     url: "https://linkedin.com/in/shreyanshpatnii",
     username: "shreyanshpatnii",
   },
+  {
+    id: "email",
+    platform: "Email",
+    label: "Email",
+    url: "mailto:Shreyansh@sahaya.tech",
+    username: "Shreyansh@sahaya.tech",
+  },
 ];

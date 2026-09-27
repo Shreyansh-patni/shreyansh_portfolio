@@ -114,7 +114,14 @@ export function ContactForm() {
         </button>
 
         <p className="mt-2.5 text-[12px] text-muted-foreground/70">
-          Form submissions are currently disabled. You can connect via direct social links on the homepage.
+          Form submissions are currently disabled. You can email me directly at{" "}
+          <a
+            href="mailto:Shreyansh@sahaya.tech"
+            className="text-foreground underline hover:text-accent transition-colors font-mono"
+          >
+            Shreyansh@sahaya.tech
+          </a>
+          .
         </p>
       </div>
     </form>

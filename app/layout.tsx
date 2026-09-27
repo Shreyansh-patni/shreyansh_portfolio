@@ -5,6 +5,7 @@ import "./globals.css";
 import { profile } from "@/content/profile";
 import { socialAccounts } from "@/content/social";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import { CopyDetailsShortcut } from "@/components/ui/CopyDetailsShortcut";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-34W7G6FYV8";
 
@@ -65,6 +66,7 @@ const jsonLdPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: profile.name,
+  email: profile.email,
   url: "https://shreyansh.cc",
   image: "https://shreyansh.cc/images/profile/avatar.png",
   description: profile.about,
@@ -110,6 +112,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground font-sans">
         <SmoothCursor />
+        <CopyDetailsShortcut />
         {children}
       </body>
     </html>
