@@ -153,7 +153,7 @@ export async function getNowPlaying(): Promise<SpotifyNowPlayingData> {
         Authorization: `Bearer ${accessToken}`,
       },
       signal: controller.signal,
-      next: { revalidate: REVALIDATE_SECONDS },
+      cache: "no-store",
     });
 
     clearTimeout(timeoutId);
@@ -215,7 +215,7 @@ export async function getNowPlaying(): Promise<SpotifyNowPlayingData> {
         Authorization: `Bearer ${accessToken}`,
       },
       signal: controller.signal,
-      next: { revalidate: REVALIDATE_SECONDS },
+      cache: "no-store",
     });
 
     clearTimeout(timeoutId);
