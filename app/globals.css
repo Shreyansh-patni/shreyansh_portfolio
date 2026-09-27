@@ -357,27 +357,43 @@ html.dark .glass-tooltip {
    ========================================================================== */
 @media print {
   @page {
-    margin: 16mm;
-    size: A4 portrait;
+    margin: 1.2cm;
+    size: portrait;
+  }
+
+  /* Force light theme CSS custom properties during print */
+  :root,
+  html,
+  html.dark,
+  html.light {
+    --background: #ffffff !important;
+    --foreground: #111111 !important;
+    --muted-foreground: #555555 !important;
+    --surface: #ffffff !important;
+    --border: #dddddd !important;
+    --accent: #2563eb !important;
+    color-scheme: light !important;
   }
 
   body {
     background: #ffffff !important;
-    color: #0f172a !important;
+    background-color: #ffffff !important;
+    color: #111111 !important;
   }
 
-  /* Exclude interactive and floating UI when printing */
+  /* Hide interactive, floating, non-printable elements */
   nav,
   button,
   kbd,
+  [data-purpose="spotify-now-playing-section"],
   .no-print,
   .print-hide,
-  [data-purpose="spotify-now-playing-section"],
+  .gradient-blur,
   ::-webkit-scrollbar {
     display: none !important;
   }
 
-  /* Disable animations and transitions for clean document output */
+  /* Disable animations/transitions and ensure motion components are visible */
   *,
   *::before,
   *::after {
@@ -385,12 +401,69 @@ html.dark .glass-tooltip {
     transition: none !important;
   }
 
-  /* Prevent page breaks inside timeline cards and section blocks */
+  [style*="opacity: 0"],
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+  }
+
+  [style*="filter"] {
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+
+  [style*="transform"] {
+    transform: none !important;
+  }
+
+  /* Preserve image clarity and colors */
+  img {
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Override dark banner container in ProfileHero for print */
+  [data-purpose="hero-section"] .bg-black {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    border-color: #dddddd !important;
+  }
+
+  /* Soften card backgrounds and borders for clean ink consumption */
+  .bg-surface,
+  .bg-surface\/40,
+  .bg-surface\/50,
+  .bg-surface\/60,
+  .bg-surface\/80,
+  .glass-pill,
+  .glass-interactive,
+  .glass-dock {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-color: #dddddd !important;
+    box-shadow: none !important;
+  }
+
+  .text-muted-foreground,
+  .text-muted-foreground\/80,
+  .text-muted-foreground\/70 {
+    color: #555555 !important;
+  }
+
+  .text-foreground {
+    color: #111111 !important;
+  }
+
+  /* Page break rules for clean presentation */
   section,
   article,
   footer,
   .grid,
-  .group {
+  .group,
+  .space-y-7 > *,
+  .space-y-4 > *,
+  .space-y-3 > * {
     break-inside: avoid;
     page-break-inside: avoid;
   }
