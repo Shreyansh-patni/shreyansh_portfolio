@@ -357,9 +357,8 @@ html.dark .glass-tooltip {
    ========================================================================== */
 @media print {
   @page {
-    margin: 1.2cm 1.2cm 1.2cm 1.2cm;
+    margin: 1.2cm;
     size: portrait;
-    background-color: #ffffff !important;
   }
 
   /* Force light theme CSS custom properties during print */
@@ -376,73 +375,62 @@ html.dark .glass-tooltip {
     color-scheme: light !important;
   }
 
-  /* Reset document root, body, and container backgrounds to pure white */
-  html,
-  body,
-  main,
-  div,
-  section,
-  article,
-  header,
-  footer,
-  aside,
-  nav {
+  body {
     background: #ffffff !important;
     background-color: #ffffff !important;
     color: #111111 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
   }
 
-  /* Specific text color overrides for print readability */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span,
-  a,
-  li,
-  ul,
-  ol,
-  strong,
-  b,
-  code {
-    color: #111111 !important;
+  /* Hide interactive, floating, non-printable elements */
+  nav,
+  button,
+  kbd,
+  [data-purpose="spotify-now-playing-section"],
+  .no-print,
+  .print-hide,
+  .gradient-blur,
+  ::-webkit-scrollbar {
+    display: none !important;
   }
 
-  .text-muted-foreground,
-  .text-muted-foreground\/80,
-  .text-muted-foreground\/70,
-  .text-foreground\/90 {
-    color: #555555 !important;
+  /* Disable animations/transitions and ensure motion components are visible */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 
-  .text-foreground {
-    color: #111111 !important;
+  [style*="opacity: 0"],
+  [style*="opacity:0"] {
+    opacity: 1 !important;
   }
 
-  /* Hero header banner background override for print */
+  [style*="filter"] {
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+
+  [style*="transform"] {
+    transform: none !important;
+  }
+
+  /* Preserve image clarity and colors */
+  img {
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Override dark banner container in ProfileHero for print */
   [data-purpose="hero-section"] .bg-black {
     background: #f8fafc !important;
     background-color: #f8fafc !important;
     border-color: #dddddd !important;
   }
 
-  /* Border and divider overrides for print */
-  *,
-  *::before,
-  *::after {
-    border-color: #dddddd !important;
-    animation: none !important;
-    transition: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  /* Badges, pills, and surface elements */
+  /* Soften card backgrounds and borders for clean ink consumption */
   .bg-surface,
   .bg-surface\/40,
   .bg-surface\/50,
@@ -457,24 +445,14 @@ html.dark .glass-tooltip {
     box-shadow: none !important;
   }
 
-  /* Preserve image clarity and colors without grayscale or dark opacity filters */
-  img {
-    filter: none !important;
-    -webkit-filter: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+  .text-muted-foreground,
+  .text-muted-foreground\/80,
+  .text-muted-foreground\/70 {
+    color: #555555 !important;
   }
 
-  /* Exclude non-printable elements */
-  nav,
-  [data-purpose="spotify-now-playing-section"],
-  .no-print,
-  .print-hide,
-  html.custom-cursor-active,
-  button,
-  kbd,
-  ::-webkit-scrollbar {
-    display: none !important;
+  .text-foreground {
+    color: #111111 !important;
   }
 
   /* Page break rules for clean presentation */

@@ -252,6 +252,7 @@ export function SmoothCursor({
 
   return (
     <motion.div
+      className="no-print"
       style={{
         position: "fixed",
         left: cursorX,
