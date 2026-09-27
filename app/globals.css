@@ -352,3 +352,99 @@ html.dark .glass-tooltip {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
+/* ==========================================================================
+   Print Stylesheet (@media print)
+   ========================================================================== */
+@media print {
+  @page {
+    margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+    size: portrait;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Exclude non-print, floating, and Spotify sections completely */
+  nav,
+  [data-purpose="spotify-now-playing-section"],
+  .no-print,
+  .print-hide,
+  html.custom-cursor-active,
+  button,
+  kbd {
+    display: none !important;
+  }
+
+  /* Disable transitions & animations for clean document layout */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Prevent awkward section splits */
+  section,
+  article,
+  footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Prevent awkward splits inside content blocks */
+  .grid,
+  .group,
+  .space-y-7 > *,
+  .space-y-4 > *,
+  .space-y-3 > * {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Print-friendly borders and text contrast */
+  .border,
+  .border-b,
+  .border-t,
+  .border-r,
+  .border-l {
+    border-color: #cbd5e1 !important;
+  }
+
+  .text-muted-foreground {
+    color: #475569 !important;
+  }
+
+  .text-foreground {
+    color: #0f172a !important;
+  }
+
+  .bg-surface,
+  .glass-pill,
+  .glass-interactive,
+  .glass-dock {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+}
+
