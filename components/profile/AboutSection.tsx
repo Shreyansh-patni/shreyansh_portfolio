@@ -51,42 +51,6 @@ export function AboutSection({ data = defaultAboutData }: AboutSectionProps) {
 
       {/* Subsections Stack */}
       <div className="space-y-7">
-        {/* What I Do */}
-        <div>
-          <h3 className="text-[12px] font-mono uppercase tracking-wider text-muted-foreground mb-3 font-medium">
-            What I Do
-          </h3>
-          <ul className="space-y-2 text-[13.5px] text-muted-foreground leading-relaxed font-normal">
-            {data.whatIDo.map((item, idx) => (
-              <li key={idx} className="flex items-start gap-2">
-                <span className="text-foreground/60 select-none">•</span>
-                <span>
-                  <strong className="font-semibold text-foreground">
-                    {item.label}
-                  </strong>{" "}
-                  —{" "}
-                  {item.linkUrl && item.linkText ? (
-                    <>
-                      {item.description.split(item.linkText)[0]}
-                      <a
-                        href={item.linkUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline underline-offset-4 font-medium text-foreground hover:text-accent transition-colors"
-                      >
-                        {item.linkText}
-                      </a>
-                      {item.description.split(item.linkText)[1]}
-                    </>
-                  ) : (
-                    item.description
-                  )}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         {/* Currently */}
         <div>
           <h3 className="text-[12px] font-mono uppercase tracking-wider text-muted-foreground mb-3 font-medium">

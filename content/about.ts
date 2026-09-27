@@ -4,13 +4,6 @@ export interface HighlightText {
   link?: string;
 }
 
-export interface WhatIDoItem {
-  label: string;
-  description: string;
-  linkText?: string;
-  linkUrl?: string;
-}
-
 export interface CurrentlyItem {
   text: string;
   linkText?: string;
@@ -19,7 +12,6 @@ export interface CurrentlyItem {
 
 export interface AboutContent {
   intro: HighlightText[][];
-  whatIDo: WhatIDoItem[];
   currently: CurrentlyItem[];
   interests: string[];
 }
@@ -46,44 +38,22 @@ export const aboutData: AboutContent = {
     ],
     [
       { text: "Currently building and scaling " },
-      { text: "Sahaya", highlight: true, link: "https://sahaya.tech" },
+      { text: "/sahaya", highlight: true, link: "https://sahaya.tech/" },
       { text: " and " },
-      { text: "th3.media", highlight: true, link: "https://th3.media" },
+      { text: "/th3.media", highlight: true, link: "https://th3.media/" },
       { text: "." },
     ],
-  ],
-  whatIDo: [
-    {
-      label: "Build",
-      description: "Software products, SaaS & AI applications",
-    },
-    {
-      label: "Founder",
-      description: "Sahaya",
-      linkText: "Sahaya",
-      linkUrl: "https://sahaya.tech",
-    },
-    {
-      label: "Media",
-      description: "th3.media",
-      linkText: "th3.media",
-      linkUrl: "https://th3.media",
-    },
-    {
-      label: "Learn",
-      description: "Computer Science & Engineering at PES University",
-    },
   ],
   currently: [
     {
       text: "Building and scaling ",
       linkText: "Sahaya",
-      linkUrl: "https://sahaya.tech",
+      linkUrl: "https://sahaya.tech/",
     },
     {
       text: "Growing ",
       linkText: "th3.media",
-      linkUrl: "https://th3.media",
+      linkUrl: "https://th3.media/",
     },
     {
       text: "Working on new software/product ideas",
