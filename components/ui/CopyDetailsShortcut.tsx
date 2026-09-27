@@ -128,7 +128,7 @@ export function CopyDetailsShortcut() {
 
   const handlePrint = useCallback(() => {
     if (typeof window !== "undefined") {
-      window.print();
+      window.open("/print", "_blank");
     }
   }, []);
 
