@@ -42,8 +42,8 @@ export const experiences: Experience[] = [
     id: "lt-edutech-data-analyst",
     company: "L&T",
     role: "Data Analyst",
-    startDate: "Jul 2023",
-    endDate: "Sep 2023",
+    startDate: "Jul'23",
+    endDate: "Sep'23",
     description:
       "Supported data analytics projects through Python-based data processing, data cleaning, analysis, aggregation, and visualization.",
     companyUrl: "https://www.linkedin.com/company/89937516/",

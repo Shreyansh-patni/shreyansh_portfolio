@@ -9,6 +9,7 @@ export interface TimelineEntryProps {
   badgeUrl?: string;
   badgeDotColor?: string;
   logo?: string;
+  typeTag?: string;
   description?: string;
 }
 
@@ -20,6 +21,7 @@ export function TimelineEntry({
   badgeUrl,
   badgeDotColor = "bg-emerald-400",
   logo,
+  typeTag,
   description,
 }: TimelineEntryProps) {
   return (
@@ -38,6 +40,11 @@ export function TimelineEntry({
             dotColor={badgeDotColor}
             logo={logo}
           />
+          {typeTag && (
+            <span className="inline-flex items-center px-1.5 py-0.5 text-[11px] font-mono text-muted-foreground/80 glass-pill rounded border border-border/50 font-normal">
+              {typeTag}
+            </span>
+          )}
         </div>
         {description ? (
           <p className="text-[13px] text-muted-foreground leading-relaxed">

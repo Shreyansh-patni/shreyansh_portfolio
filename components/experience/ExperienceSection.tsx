@@ -41,6 +41,7 @@ export function ExperienceSection({
               badgeUrl={item.companyUrl}
               badgeDotColor="bg-emerald-400"
               logo={item.logo}
+              typeTag={item.type}
               description={item.description}
             />
           ))}
