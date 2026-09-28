@@ -89,6 +89,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <Script
@@ -110,7 +111,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-background text-foreground font-sans">
+      <body
+        className="min-h-screen flex flex-col bg-background text-foreground font-sans"
+        suppressHydrationWarning
+      >
         <SmoothCursor />
         <CopyDetailsShortcut />
         {children}

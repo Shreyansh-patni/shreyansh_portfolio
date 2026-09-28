@@ -1,6 +1,6 @@
 import React from "react";
 import { aboutData as defaultAboutData, type AboutContent } from "@/content/about";
-import { Badge } from "@/components/ui/Badge";
+import { InterestsSection } from "@/components/profile/InterestsSection";
 
 interface AboutSectionProps {
   data?: AboutContent;
@@ -80,23 +80,7 @@ export function AboutSection({ data = defaultAboutData }: AboutSectionProps) {
         </div>
 
         {/* Interests */}
-        <div>
-          <h3 className="text-[12px] font-mono uppercase tracking-wider text-muted-foreground mb-3 font-medium">
-            Interests
-          </h3>
-          <div className="flex flex-wrap items-center gap-2 text-[12px] font-mono text-muted-foreground">
-            {data.interests.map((interest, idx) => (
-              <React.Fragment key={interest}>
-                {idx > 0 && (
-                  <span className="text-muted-foreground/40 select-none">·</span>
-                )}
-                <Badge variant="outline">
-                  {interest}
-                </Badge>
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
+        <InterestsSection />
       </div>
     </section>
   );
