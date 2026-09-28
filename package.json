@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@radix-ui/react-tooltip": "^1.2.16",
     "cobe": "^0.6.4",
     "lucide-react": "^1.48.0",
     "motion": "^13.4.4",

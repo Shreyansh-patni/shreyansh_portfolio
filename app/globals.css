@@ -133,54 +133,6 @@ html.custom-cursor-active [contenteditable="true"] {
    Apple-inspired Liquid Glass Design Tokens & Utilities
    ========================================================================== */
 
-/* 1. Floating Dock Glass (Navigation Bar & Theme Switcher) */
-.glass-dock {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 
-    0 10px 30px -5px rgba(15, 23, 42, 0.08),
-    0 2px 6px -1px rgba(15, 23, 42, 0.04),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
-  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  .glass-dock {
-    background: rgba(18, 18, 18, 0.75);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 
-      0 10px 30px -5px rgba(0, 0, 0, 0.5),
-      0 2px 6px -1px rgba(0, 0, 0, 0.3),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
-  }
-}
-
-html.dark .glass-dock {
-  background: rgba(18, 18, 18, 0.75);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    0 10px 30px -5px rgba(0, 0, 0, 0.5),
-    0 2px 6px -1px rgba(0, 0, 0, 0.3),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
-}
-
-html.light .glass-dock {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 
-    0 10px 30px -5px rgba(15, 23, 42, 0.08),
-    0 2px 6px -1px rgba(15, 23, 42, 0.04),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
-}
-
 /* 2. Glass Pill & Badge (Status Badges, Tech Tags, Location Badge) */
 .glass-pill {
   background: rgba(255, 255, 255, 0.65);
@@ -333,24 +285,6 @@ html.light .glass-interactive:hover {
     inset 0 1px 0 0 rgba(255, 255, 255, 1);
 }
 
-/* 4. Glass Tooltip */
-.glass-tooltip {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-}
-
-html.dark .glass-tooltip {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #09090b;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-}
 
 /* ==========================================================================
    Print Stylesheet (@media print)
@@ -437,8 +371,7 @@ html.dark .glass-tooltip {
   .bg-surface\/60,
   .bg-surface\/80,
   .glass-pill,
-  .glass-interactive,
-  .glass-dock {
+  .glass-interactive {
     background: #ffffff !important;
     background-color: #ffffff !important;
     border-color: #dddddd !important;
