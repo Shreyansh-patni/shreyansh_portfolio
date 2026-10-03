@@ -7,6 +7,30 @@
 }
 
 :root {
+  --background: #0a0a0a;
+  --foreground: #f8fafc;
+  --muted-foreground: #94a3b8;
+  --surface: #171717;
+  --border: #27272a;
+  --accent: #3b82f6;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.4);
+  color-scheme: dark;
+}
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #f8fafc;
+  --muted-foreground: #94a3b8;
+  --surface: #171717;
+  --border: #27272a;
+  --accent: #3b82f6;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.4);
+  color-scheme: dark;
+}
+
+html.light {
   --background: #ffffff;
   --foreground: #0f172a;
   --muted-foreground: #64748b;
@@ -15,29 +39,7 @@
   --accent: #2563eb;
   --scrollbar-thumb: rgba(148, 163, 184, 0.5);
   --scrollbar-thumb-hover: rgba(100, 116, 139, 0.75);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #f8fafc;
-    --muted-foreground: #94a3b8;
-    --surface: #171717;
-    --border: #27272a;
-    --accent: #3b82f6;
-    --scrollbar-thumb: rgba(255, 255, 255, 0.2);
-    --scrollbar-thumb-hover: rgba(255, 255, 255, 0.4);
-  }
-}
-
-html.dark {
-  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
-  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.4);
-}
-
-html.light {
-  --scrollbar-thumb: rgba(148, 163, 184, 0.5);
-  --scrollbar-thumb-hover: rgba(100, 116, 139, 0.75);
+  color-scheme: light;
 }
 
 @theme inline {
