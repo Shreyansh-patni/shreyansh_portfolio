@@ -31,6 +31,20 @@ export const GLOBE_CONFIG: COBEOptions = {
   ],
 };
 
+function checkWebGLSupport(): boolean {
+  if (typeof window === "undefined") return true;
+  try {
+    const canvas = document.createElement("canvas");
+    const gl =
+      canvas.getContext("webgl2") ||
+      canvas.getContext("webgl") ||
+      canvas.getContext("experimental-webgl");
+    return !!gl;
+  } catch {
+    return false;
+  }
+}
+
 export function Globe({
   className,
   config = GLOBE_CONFIG,
@@ -45,6 +59,7 @@ export function Globe({
   const pointerInteractionMovement = useRef(0);
 
   const [isDark, setIsDark] = useState<boolean>(false);
+  const [isSupported, setIsSupported] = useState<boolean>(checkWebGLSupport);
 
   const r = useMotionValue(0);
   const rs = useSpring(r, {
@@ -92,6 +107,9 @@ export function Globe({
   }, []);
 
   useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !isSupported) return;
+
     const onResize = () => {
       if (canvasRef.current) {
         widthRef.current = canvasRef.current.offsetWidth;
@@ -122,20 +140,48 @@ export function Globe({
       },
     };
 
-    const globe = createGlobe(canvasRef.current!, mergedConfig);
+    let globe: ReturnType<typeof createGlobe> | null = null;
+    let animationFrameId = 0;
 
-    const animationFrameId = requestAnimationFrame(() => {
-      if (canvasRef.current) {
-        canvasRef.current.style.opacity = "1";
-      }
-    });
+    try {
+      globe = createGlobe(canvas, mergedConfig);
+      animationFrameId = requestAnimationFrame(() => {
+        if (canvasRef.current) {
+          canvasRef.current.style.opacity = "1";
+        }
+      });
+    } catch {
+      queueMicrotask(() => setIsSupported(false));
+      return () => {
+        window.removeEventListener("resize", onResize);
+      };
+    }
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      globe.destroy();
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      if (globe) {
+        try {
+          globe.destroy();
+        } catch {}
+      }
       window.removeEventListener("resize", onResize);
     };
-  }, [rs, config, isDark]);
+  }, [rs, config, isDark, isSupported]);
+
+  if (!isSupported) {
+    return (
+      <div
+        className={cn(
+          "relative mx-auto aspect-square w-full max-w-150 flex items-center justify-center rounded-full bg-surface/30 border border-border/40 shadow-inner",
+          className
+        )}
+        role="img"
+        aria-label="3D Globe unavailable"
+      >
+        <div className="w-1/2 h-1/2 rounded-full bg-border/20 blur-xl" />
+      </div>
+    );
+  }
 
   return (
     <div
