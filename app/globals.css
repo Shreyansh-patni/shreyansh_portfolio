@@ -15,6 +15,16 @@
   --accent: #3b82f6;
   --scrollbar-thumb: rgba(255, 255, 255, 0.2);
   --scrollbar-thumb-hover: rgba(255, 255, 255, 0.4);
+  --github-level-0: rgba(255, 255, 255, 0.04);
+  --github-level-0-border: rgba(255, 255, 255, 0.07);
+  --github-level-1: #0e4429;
+  --github-level-1-border: rgba(16, 185, 129, 0.3);
+  --github-level-2: #006d32;
+  --github-level-2-border: rgba(16, 185, 129, 0.5);
+  --github-level-3: #26a641;
+  --github-level-3-border: rgba(16, 185, 129, 0.7);
+  --github-level-4: #39d353;
+  --github-level-4-border: #4ade80;
   color-scheme: dark;
 }
 
@@ -27,6 +37,16 @@ html.dark {
   --accent: #3b82f6;
   --scrollbar-thumb: rgba(255, 255, 255, 0.2);
   --scrollbar-thumb-hover: rgba(255, 255, 255, 0.4);
+  --github-level-0: rgba(255, 255, 255, 0.04);
+  --github-level-0-border: rgba(255, 255, 255, 0.07);
+  --github-level-1: #0e4429;
+  --github-level-1-border: rgba(16, 185, 129, 0.3);
+  --github-level-2: #006d32;
+  --github-level-2-border: rgba(16, 185, 129, 0.5);
+  --github-level-3: #26a641;
+  --github-level-3-border: rgba(16, 185, 129, 0.7);
+  --github-level-4: #39d353;
+  --github-level-4-border: #4ade80;
   color-scheme: dark;
 }
 
@@ -39,6 +59,16 @@ html.light {
   --accent: #2563eb;
   --scrollbar-thumb: rgba(148, 163, 184, 0.5);
   --scrollbar-thumb-hover: rgba(100, 116, 139, 0.75);
+  --github-level-0: #ebedf0;
+  --github-level-0-border: rgba(0, 0, 0, 0.06);
+  --github-level-1: #9be9a8;
+  --github-level-1-border: #86efac;
+  --github-level-2: #40c463;
+  --github-level-2-border: #22c55e;
+  --github-level-3: #30a14e;
+  --github-level-3-border: #16a34a;
+  --github-level-4: #216e39;
+  --github-level-4-border: #15803d;
   color-scheme: light;
 }
 
@@ -49,6 +79,11 @@ html.light {
   --color-surface: var(--surface);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-github-level-0: var(--github-level-0);
+  --color-github-level-1: var(--github-level-1);
+  --color-github-level-2: var(--github-level-2);
+  --color-github-level-3: var(--github-level-3);
+  --color-github-level-4: var(--github-level-4);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
 }
