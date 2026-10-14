@@ -43,16 +43,15 @@ export function ProfileHero({ profile = defaultProfile }: ProfileHeroProps) {
     <section className="mb-12" data-purpose="hero-section">
       {/* Banner Header Container */}
       <div className="relative w-full rounded-2xl overflow-hidden bg-black mb-3 border border-border/80 shadow-lg">
-        <div className="w-full h-44 sm:h-52 relative overflow-hidden bg-black">
+        <div className="w-full aspect-[3/1] relative overflow-hidden bg-black">
           <Image
             src={profile.banner}
             alt={`${profile.name}'s cover banner`}
             fill
             sizes="(max-width: 640px) 100vw, 620px"
             priority
-            className="object-cover filter grayscale contrast-125"
+            className="object-contain"
           />
-
         </div>
       </div>
 
