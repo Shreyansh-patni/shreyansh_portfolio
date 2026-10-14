@@ -10,6 +10,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "buildrs-hq",
+    name: "BuildrsHQ",
+    description:
+      "An AI-native product workspace for indie founders that connects idea validation, research, product planning, and execution in one place.",
+    url: "https://buildrs.app",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    status: "In Development",
+  },
+  {
     id: "agency-os",
     name: "Agency OS",
     description:
