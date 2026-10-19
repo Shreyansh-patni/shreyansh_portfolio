@@ -87,7 +87,7 @@ export const profile: Profile = {
     },
   ],
   avatar: "/images/profile/avatar.png",
-  banner: "/images/banner.png",
+  banner: "/images/banner.jpg",
   socialLinks: [
     {
       platform: "Website",
