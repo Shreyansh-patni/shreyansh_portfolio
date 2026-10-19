@@ -50,7 +50,7 @@ export function ProfileHero({ profile = defaultProfile }: ProfileHeroProps) {
             fill
             sizes="(max-width: 640px) 100vw, 620px"
             priority
-            className="object-contain"
+            className="object-cover object-center"
           />
         </div>
       </div>
