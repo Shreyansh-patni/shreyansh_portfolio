@@ -57,16 +57,17 @@ export function ProfileHero({ profile = defaultProfile }: ProfileHeroProps) {
 
       {/* Profile Info Area with Overlapping Avatar */}
       <div className="px-1.5 relative">
-        <div className="flex justify-between items-end -mt-14 sm:-mt-16 mb-3">
+        <div className="flex justify-center items-end -mt-14 sm:-mt-16 mb-3">
           {/* Circular Profile Avatar */}
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 translate-x-[10px] rounded-full border-4 border-background bg-surface overflow-hidden shadow-xl ring-1 ring-border shrink-0">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-background bg-surface overflow-hidden shadow-xl ring-1 ring-border shrink-0">
             <Image
               src={profile.avatar}
               alt={profile.name}
               fill
               sizes="(max-width: 640px) 80px, 96px"
               priority
-              className="object-cover"
+              className="object-cover grayscale"
+              style={{ filter: "grayscale(100%)" }}
             />
           </div>
         </div>
